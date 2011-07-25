@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="42" height="27" tilewidth="10" tileheight="10">
+ <tileset firstgid="1" name="smallTileset" tilewidth="10" tileheight="10">
+  <image source="meta_tiles.png" width="67" height="34"/>
+  <tile id="7">
+   <properties>
+    <property name="Buildable" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="42" height="27">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3UQQoAIAgFUZdC979vF4g0UD/ELN4uairKzczRZgWiMad5uhqr9th5jur7zHSqG37rrLj729tS9k51vawf/UUAAAAAZm1Tf/njuBEAAA==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="42" height="27">
+  <object name="Waypoint0" x="240" y="20" width="10" height="10"/>
+  <object name="Waypoint1" x="40" y="20" width="10" height="10"/>
+  <object name="Waypoint2" x="210" y="180" width="10" height="10"/>
+ </objectgroup>
+ <layer name="Tile Layer 2" width="42" height="27">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQ0PoAAAAAB4NCtwDK64EQAA
+  </data>
+ </layer>
+</map>

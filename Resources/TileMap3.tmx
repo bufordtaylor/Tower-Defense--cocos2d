@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="25" height="14" tilewidth="20" tileheight="20">
+ <tileset firstgid="1" name="smallTiles" tilewidth="20" tileheight="20">
+  <image source="meta_tiles.png" width="67" height="34"/>
+  <tile id="0">
+   <properties>
+    <property name="Buildable" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="25" height="14" opacity="0.07">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NkYGBgHCaYmcaYEYmmtT8G0g5Kw4hYc4Zi2AykHZTEBznxN4pphwEfJdj1eAUAAA==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="25" height="14">
+  <object name="Waypoint0" x="500" y="40" width="20" height="20"/>
+  <object gid="3" x="560" y="40"/>
+  <object name="Waypoint1" x="20" y="40" width="20" height="20"/>
+  <object name="Waypoint2" x="20" y="120" width="20" height="20"/>
+  <object name="Waypoint3" x="440" y="100" width="20" height="20"/>
+  <object name="Waypoint4" x="440" y="180" width="20" height="20"/>
+  <object name="Waypoint5" x="-20" y="200" width="20" height="20"/>
+ </objectgroup>
+</map>

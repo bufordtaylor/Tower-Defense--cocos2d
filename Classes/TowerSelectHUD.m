@@ -43,7 +43,7 @@ static TowerSelectHUD *_sharedHUD = nil;
 
 -(void) toggleTSHUDwithSpeed:(float)speed {
     id actionMove = nil;
-    NSLog(@"moving %f", speed);
+    DLog(@"moving %f", speed);
     if (hidden){
         actionMove = [CCMoveTo actionWithDuration:speed position:ccp(0,0)];
         hidden = NO;
@@ -91,10 +91,10 @@ static TowerSelectHUD *_sharedHUD = nil;
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {  
     CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
     CCSprite * newSprite = nil;
-    NSLog(@"touches began");
+    DLog(@"touches began");
     for (CCSprite *sprite in movableSprites) {
         if (CGRectContainsPoint(sprite.boundingBox, touchLocation)) {  
-            NSLog(@"inside a sprite");
+            DLog(@"inside a sprite");
 			DataModel *m = [DataModel getModel];
 			m._gestureRecognizer.enabled = NO;
 			

@@ -128,7 +128,7 @@
 	}
 	
 	NSAssert([m._waypoints count] > 0, @"Waypoint objects missing");
-    NSLog(@"Okay, we've got %d waypoints", [m._waypoints count]);
+    DLog(@"Okay, we've got %d waypoints", [m._waypoints count]);
 	wp = nil;
 }
 
@@ -164,11 +164,11 @@
 	
 	int tileGid = [self.background tileGIDAt:towerLoc];
 	NSDictionary *props = [self.tileMap propertiesForGID:tileGid];
-    NSLog(@"dict value %@", props);
+    DLog(@"dict value %@", props);
 	NSString *type = [props valueForKey:@"Buildable"];
 	
 	
-	NSLog(@"Buildable: %@", type);
+	DLog(@"Buildable: %@", type);
 	if([type isEqualToString: @"1"]) {
 		target = [MachineGunTower tower];
 		target.position = ccp((towerLoc.x *  20) + 16, self.tileMap.contentSize.height - (towerLoc.y * 20) - 16);
@@ -178,7 +178,7 @@
 		[m._towers addObject:target];
 		
 	} else {
-		NSLog(@"Tile Not Buildable");
+		DLog(@"Tile Not Buildable");
 	}
 	
 }
@@ -309,7 +309,7 @@
     retval.x = MAX(retval.x, -_tileMap.contentSize.width+winSize.width); 
     retval.y = MIN(0, retval.y);
     retval.y = MAX(-_tileMap.contentSize.height+winSize.height, retval.y); 
-//    NSLog(@"boundLayerPos %d", retval);
+//    DLog(@"boundLayerPos %d", retval);
     return retval;
 }
 

@@ -137,7 +137,7 @@
 	}
 	
 	NSAssert([m._waypoints count] > 0, @"Waypoint objects missing");
-    NSLog(@"Okay, we've got %d waypoints", [m._waypoints count]);
+    DLog(@"Okay, we've got %d waypoints", [m._waypoints count]);
 	wp = nil;
 }
 
@@ -173,11 +173,11 @@
 	
 	int tileGid = [self.background tileGIDAt:towerLoc];
 	NSDictionary *props = [self.tileMap propertiesForGID:tileGid];
-    NSLog(@"dict value %@", props);
+    DLog(@"dict value %@", props);
 	NSString *type = [props valueForKey:@"Buildable"];
 	
 	
-	NSLog(@"Buildable: %@", type);
+	DLog(@"Buildable: %@", type);
 	if([type isEqualToString: @"1"]) {
 		target = [MachineGunTower tower];
 		target.position = ccp((towerLoc.x *  20) + 16, self.tileMap.contentSize.height - (towerLoc.y * 20) - 16);
@@ -187,7 +187,7 @@
 		[m._towers addObject:target];
 		
 	} else {
-		NSLog(@"Tile Not Buildable");
+		DLog(@"Tile Not Buildable");
 	}
 	
 }
@@ -266,18 +266,18 @@
     } else if ([pm isPaused]){
 		[self unschedule:@selector(gameLogic:)];
         for(CCSprite* p in m._projectiles){
-            NSLog(@"p");
+//            DLog(@"p");
 //            [m._projectiles removeObject:p];
 //            [self removeChild:p cleanup:YES];
             [p stopAllActions];
         }
         for(Creep* c in m._targets){
-            NSLog(@"c");
+//            DLog(@"c");
             [c stopAllActions];
             [c unschedule:@selector(FollowPath:)];
         }
         for(Tower* t in m._towers){
-            NSLog(@"t");
+//            DLog(@"t");
             [t stopAllActions];
             [t unschedule:@selector(TowerLogic:)];
         }
@@ -287,10 +287,10 @@
         for(Creep* creep in m._targets){
             creep.curWaypoint--;
             [self CreepPath:creep];
-            NSLog(@"c2");
+//            DLog(@"c2");
         }
         for (Tower* t in m._towers) {
-            NSLog(@"t2");
+//            DLog(@"t2");
             [t toggleTowerAnimation];
         }
         [self schedule:@selector(gameLogic:) interval:1.0];
@@ -299,7 +299,7 @@
 	NSMutableArray *projectilesToDelete = [[NSMutableArray alloc] init];
     
 	for (Projectile *projectile in m._projectiles) {
-        NSLog(@"p2");
+        DLog(@"p2");
 		
 		CGRect projectileRect = CGRectMake(projectile.position.x - (projectile.contentSize.width/2), 
 										   projectile.position.y - (projectile.contentSize.height/2), 
@@ -365,7 +365,7 @@
     retval.x = MAX(retval.x, -_tileMap.contentSize.width+winSize.width); 
     retval.y = MIN(0, retval.y);
     retval.y = MAX(-_tileMap.contentSize.height+winSize.height, retval.y); 
-    //    NSLog(@"boundLayerPos %d", retval);
+    //    DLog(@"boundLayerPos %d", retval);
     return retval;
 }
 
